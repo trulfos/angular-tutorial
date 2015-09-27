@@ -1,0 +1,25 @@
+<h1>Controller</h1>
+
+<p>Broen mellom services og scopet</p>
+<ul>
+    <li>Hold logikk i services</li>
+    <li>Funksjoner som sendes videre til f. eks. ng-click</li>
+</ul>
+
+<p>Eksempel:</p>
+<pre><code>angular.controller('MyController', function ($scope, userService) {
+    
+    this.saveUser = function () {
+        userService.save($scope.user);
+    };
+
+    this.replaceUser = function () {
+        userService.replace($scope.replaceUserId, $scope.user);
+    };
+
+
+    this.deleteUser = function () {
+        userService.remove($scope.deleteUserId);
+    };
+
+});</code></pre>

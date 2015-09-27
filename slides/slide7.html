@@ -1,0 +1,64 @@
+<h1>Services</h1>
+
+<p>Objekter registrert i moduler</p>
+<ul>
+    <li>Sigletons - det finnes bare én av hver</li>
+    <li>Her hører &ldquo;business-logikk&rdquo; hjemme</li>
+    <li>
+        Eksterne tjenester og kode (<abbr title="for eksempel">f. eks.</abbr>
+        <code>$http</code>)
+    </li>
+</ul>
+
+<pre><code>myModule.factory('counterService', function () {
+
+    var counter = 0;
+
+    return {
+        getCount: function () {
+            return counter;
+        },
+
+        increment: function () {
+            counter++;
+        }
+    };
+
+});</code></pre>
+
+<p>Eksempler:</p>
+<ul>
+    <li><code>userService</code>
+        <ul>
+            <li><code>get</code></li>
+            <li><code>query</code></li>
+            <li><code>getSorted</code></li>
+        </ul>
+    </li>
+    <li><code>$http</code> (en funksjon)</li>
+    <li><code>$window</code> (wrapper for <code>window</code>)</li>
+</ul>
+
+<np-spoiler>
+    <p>
+        Det finnes flere måter å registrere services på! Kan også bruke
+        <code>module.service</code>:
+    </p>
+
+    <pre><code>myModule.service('counterService', function () {
+
+    var counter = 0;
+
+    this.getCount = function () {
+        return counter;
+    };
+
+    this.increment = function () {
+        counter++;
+    };
+
+});</code></pre>
+
+    <p>Eventuelt <code>module.provider</code> eller <code>module.value</code></p>
+
+</np-spoiler>

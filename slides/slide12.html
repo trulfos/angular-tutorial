@@ -1,0 +1,20 @@
+<h1>Eksempel: Directive</h1>
+
+<p>Factory-funksjon som returnerer et DDO (directive definition object)</p>
+<pre><code>myModule.directive('myDirective', function () {
+
+return {
+    restrict: 'A',
+    link: function (scope, element, attributes) {
+        console.log(element);
+    }
+};
+
+});</code></pre>
+
+<p>HTML-kode der direktivet blir brukt:</p>
+<pre><code>&lt;div my-directive id=&rdquo;myDiv&ldquo;&gt;&lt;/div&gt;</code></pre>
+
+<p><strong>OBS:</strong> Angular normaliserer navn!</p>
+
+<small>Hva er scope? Det kommer vi til.</small>

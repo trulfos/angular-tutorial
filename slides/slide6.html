@@ -1,0 +1,33 @@
+<h1>Factories</h1>
+
+<p>Funksjon som produserer verdi</p>
+<ul>
+    <li>Injiseres med avhengigheter</li>
+    <li>Lager et scope for private variabler</li>
+</ul>
+
+<p>Enkelt eksempel uten avhengigheter:</p>
+<pre><code>angular.factory('hello', function () {
+    return 'Hello';
+});</code></pre>
+
+<p>Med avhengigheter:</p>
+<pre><code>angular.factory('myValue', function (hello, world) {
+    return hello + ' ' + world;
+});</code></pre>
+
+<np-spoiler>
+    <p>Utnyttelse av scopet:</p>
+    <pre><code>angular.factory('hello', function () {
+    var counter = 0;
+
+    return function () {
+        return counter++;
+    };
+});</code></pre>
+    
+    <small>
+        <code>counter</code> vil her bare være tilgjengelig gjennom den
+        returnerte verdien
+    </small>
+</np-spoiler>

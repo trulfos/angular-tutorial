@@ -1,0 +1,36 @@
+<h1>Oppgave 1: Hello World</h1>
+
+<ol>
+    <li>
+        Lag en modul og med de to verdiene <code>&ldquo;Hello&rdquo;</code> og
+        <code>&rdquo;World&rdquo;</code>.
+    </li>
+    <li>
+        Lag en funksjon som tar inn to verdier og printer ut argumentene satt
+        sammen med et mellomrom.
+    </li>
+    <li>
+        Injiser funksjonen med de to verdiene.
+    </li>
+</ol>
+
+<small>
+    Husk at navnene på verdiene i modulen og parameterene til funksjonen må
+    matche.
+</small>
+
+<np-spoiler>
+    <h2>Løsning</h2>
+    <p>Lag en modul og legg til verdier</p>
+    <pre><code>var myModule = angular.module('myModule', []);
+myModule.value('hello', 'Hello');
+myModule.value('world', 'World');</code></pre>
+
+    <p>Lag funksjonen (med matchende navn)</p>
+    <pre><code>function myFunc(hello, world) {
+    console.log(hello + ' ' + world);
+}</pre></code>
+
+    <p>Injiser og kjør funksjonen</p>
+    <pre><code>angular.invoke(myFunc);</pre></code>
+</np-spoiler>

@@ -1,0 +1,27 @@
+<h1>Arv</h1>
+
+<p>Et scope kan arve fra et annet</p>
+<ul>
+    <li>"Får" alle egenskapene</li>
+    <li>Benytter javascripts prototypebaserte arv!
+        <ul>
+            <li>Husk overskygging!</li>
+            <li>$digest propagerer</li>
+    </li>
+</ul>
+
+<img src="images/scope-inheritance.svg" alt="Scope inheritance and shadowing">
+
+<np-spoiler>
+    <p><code>$new</code> lager et nytt arvet scope:</p>
+    <pre><code>var parent = $rootScope.$new(),
+    child = parent.$new();</pre></code>
+
+    <p>Egenskaper arver:</p>
+    <pre><code>parent.myValue = 1;
+console.log(child.myValue);</pre></code>
+
+    <p>Overskygging kan være lite intuitivt:</p>
+    <pre><code>child.myValue = 2;
+console.log(parent.myValue);</pre></code>
+</np-spoiler>

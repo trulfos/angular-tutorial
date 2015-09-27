@@ -1,0 +1,24 @@
+<h1>Oppgave: Oppdater teksten</h1>
+
+<ol>
+    <li>
+        Lag et direktiv som øker <code>myValue</code> på scopet med 1 når
+        elementet trykkes
+    </li>
+    <li>
+        Sørg for at <code>myBind</code> alltid viser verdien av
+        <code>myValue</code> på scopet
+    </li>
+</ol>
+
+<small>Hint: Bruk det vi har lært om scopes!</small>
+
+<np-spoiler>
+    <p>Angular har allerede et direktiv som gjør dette: <code>ngBind</code></p>
+
+    <p>Legg merke til at du kan spesifisere hva som skal vises:</p>
+    <pre><code>minValue er: &lt;span ng-bind="myValue"&gt;&lt;/span&gt;</code></pre>
+
+    <p>Kompilatoren har spesiell støtte for oppgaven over:</p>
+    <pre><code ng-non-bindable>myValue er: {{myValue}}</code></pre>
+</np-spoiler>

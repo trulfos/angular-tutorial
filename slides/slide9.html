@@ -1,0 +1,46 @@
+<h1>Scope</h1>
+
+<figure>
+    <blockquote cite="http://dictionary.reference.com/browse/scope">
+        <p>
+            extent or range of view, outlook, application, operation,
+            effectiveness, etc.
+        </p>
+    </blockquote>
+    <footer>
+        <cite>Dictionary.com</cite>
+    <footer>
+</figure>
+
+<p>I dette tilfellet: Et objekt</p>
+<ul>
+    <li>Har egenskaper (som alle objekter)</li>
+    <li>Funksjoner for å propagere endringer
+        <ul>
+            <li><code>$watch</code></li>
+            <li><code>$digest</code></li>
+        </ul>
+    </li>
+    <li>Observer pattern!</p>
+</ul>
+
+<img src="images/scope.svg" alt="Scope with listeners">
+
+<small>Angular-scopes er ikke det samme som javascript-scopes!</small>
+
+<np-spoiler>
+    <p>Lage et scope:</p>
+    <pre><code>var scope = $rootScope.$new();</pre></code>
+    <small>(husk at $rootScope må injectes)</small>
+
+    <p>Lytte på endringer:</p>
+    <pre><code>scope.$watch('myProperty', function () {
+    console.log('Property changed!');
+});</code></pre>
+
+    <p>Endre en egenskap på scopet:</p>
+    <pre><code>scope.myProperty = 'hei';</code></pre>
+
+    <p>Oppdatere (ved å kalle lyttere):</p>
+    <pre><code>scope.$digest();</code></pre>
+</np-spoiler>

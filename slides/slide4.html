@@ -1,0 +1,23 @@
+<h1>Injector</h1>
+
+<ul>
+    <li>&ldquo;Dependency injection&rdquo;</li>
+    <li>Avhengigheter hentes fra moduler</li>
+</ul>
+
+<img
+    src="images/module-injector.svg"
+    alt="Module-injector relationship"
+    class="centered"
+>
+
+<p>Lage en injector:</p>
+<pre><code>var injector = angular.injector(['module1', 'module2'<span class="optional">, ...</span>]);</code></pre>
+
+<p>Hente en verdi:</p>
+<pre><code>var value = injector.get('valueName');</code></pre>
+
+<p>Injisere avhengigheter i funksjon:</p>
+<pre><code>injector.invoke(function (value1, value2) {
+    <span class="optional">...</span>
+});</code></pre>

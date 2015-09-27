@@ -1,0 +1,24 @@
+<h1>Tid for eksempel</h1>
+
+<p>Registrere et par direktiver:</p>
+<pre><code>myModule.directive('myDirective', function () {
+    return {
+        link: function (scope, element, attributes) {
+            scope.myValue = &ldquo;Hei på deg!&rdquo;;
+        }
+    };
+});
+
+myModule.directive('myBind', function () {
+    return {
+        link: function (scope, element, attributes) {
+            element.html(scope.myValue);
+        }
+    };
+});</code></pre>
+
+<p>HTML-biten:</p>
+<pre><code>&lt;div my-directive&gt;&lt;/div&gt;
+&lt;div my-bind&gt;&lt;/div&gt;</code></pre>
+
+<p>Hva skjer?</p>

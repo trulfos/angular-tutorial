@@ -1,0 +1,16 @@
+<h1>La oss kompilere</h1>
+
+<p>Vanligvis brukes <code>ngApp</code></p>
+<ul>
+    <li>Ikke et vanlig direktiv</li>
+    <li>Kan kun ha ett pr. dokument</li>
+    <li>Kjører angular.bootstrap
+        <ul>
+            <li>Kompilerer innholdet</li>
+            <li>Lager injectorm med spesifisert modul</li>
+        </ul>
+    </li>
+</ul>
+
+<p>Brukes gjerne på html-taggen slik at hele siden kompileres:</p>
+<pre><code>...&lt;html ng-app="myModule"&gt;...</code></pre>
