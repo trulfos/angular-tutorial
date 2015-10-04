@@ -7,18 +7,18 @@
 </ul>
 
 <p>Enkelt eksempel uten avhengigheter:</p>
-<pre><code>angular.factory('hello', function () {
+<pre><code>myModule.factory('hello', function () {
     return 'Hello';
 });</code></pre>
 
 <p>Med avhengigheter:</p>
-<pre><code>angular.factory('myValue', function (hello, world) {
+<pre><code>myModule.factory('myValue', function (hello, world) {
     return hello + ' ' + world;
 });</code></pre>
 
 <np-spoiler>
     <p>Utnyttelse av scopet:</p>
-    <pre><code>angular.factory('hello', function () {
+    <pre><code>myModule.factory('hello', function () {
     var counter = 0;
 
     return function () {
